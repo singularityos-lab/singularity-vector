@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="dev.sinty.vector" path="/dev/sinty/vector/">
+    <key name="show-grid" type="b"><default>false</default><summary>Show the grid</summary></key>
+    <key name="snap-to-grid" type="b"><default>false</default><summary>Snap to the grid</summary></key>
+    <key name="snap-to-pixel" type="b"><default>false</default><summary>Align new and moved artwork to the pixel grid</summary></key>
+    <key name="smart-guides" type="b"><default>true</default><summary>Show smart guides while drawing and moving</summary></key>
+    <key name="snap-to-point" type="b"><default>true</default><summary>Snap to anchor points and path outlines</summary></key>
+    <key name="show-rulers" type="b"><default>true</default><summary>Show rulers</summary></key>
+    <key name="units" type="s"><choices><choice value="px"/><choice value="pt"/><choice value="mm"/><choice value="cm"/><choice value="in"/></choices><default>'px'</default><summary>Units for new documents</summary></key>
+    <key name="artboard-preset" type="s"><choices><choice value="screen"/><choice value="a4"/><choice value="letter"/><choice value="icon"/><choice value="square"/></choices><default>'screen'</default><summary>Artboard size for new documents</summary></key>
+    <key name="keyboard-increment" type="i"><range min="1" max="1000"/><default>1</default><summary>Distance moved by arrow keys</summary></key>
+    <key name="scale-strokes" type="b"><default>true</default><summary>Scale strokes and effects with objects</summary></key>
+    <key name="svg-decimals" type="i"><range min="0" max="8"/><default>3</default><summary>Decimal places written in SVG files</summary></key>
+    <key name="history-limit" type="i"><range min="0" max="100000"/><default>0</default><summary>Maximum undo steps, zero for unlimited</summary></key>
+    <key name="vectorizer-command" type="s"><default>''</default><summary>Optional local vectorizer command</summary></key>
+  </schema>
+</schemalist>

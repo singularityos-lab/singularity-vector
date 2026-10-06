@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+    <gresource prefix="/dev/sinty/vector/icons/scalable/apps">
+        <file alias="dev.sinty.vector.svg">icons/dev.sinty.vector.svg</file>
+    </gresource>
+    <gresource prefix="/dev/sinty/vector/icons/scalable/actions">
+        <file alias="vector-align-left-symbolic.svg">icons/actions/vector-align-left-symbolic.svg</file>
+        <file alias="vector-align-center-symbolic.svg">icons/actions/vector-align-center-symbolic.svg</file>
+        <file alias="vector-align-right-symbolic.svg">icons/actions/vector-align-right-symbolic.svg</file>
+        <file alias="vector-align-top-symbolic.svg">icons/actions/vector-align-top-symbolic.svg</file>
+        <file alias="vector-align-middle-symbolic.svg">icons/actions/vector-align-middle-symbolic.svg</file>
+        <file alias="vector-align-bottom-symbolic.svg">icons/actions/vector-align-bottom-symbolic.svg</file>
+        <file alias="vector-distribute-h-symbolic.svg">icons/actions/vector-distribute-h-symbolic.svg</file>
+        <file alias="vector-distribute-v-symbolic.svg">icons/actions/vector-distribute-v-symbolic.svg</file>
+        <file alias="vector-3d-symbolic.svg">icons/actions/vector-3d-symbolic.svg</file>
+        <file alias="vector-artboard-symbolic.svg">icons/actions/vector-artboard-symbolic.svg</file>
+        <file alias="vector-blend-symbolic.svg">icons/actions/vector-blend-symbolic.svg</file>
+        <file alias="vector-blob-symbolic.svg">icons/actions/vector-blob-symbolic.svg</file>
+        <file alias="vector-brush-symbolic.svg">icons/actions/vector-brush-symbolic.svg</file>
+        <file alias="vector-curvature-symbolic.svg">icons/actions/vector-curvature-symbolic.svg</file>
+        <file alias="vector-direct-symbolic.svg">icons/actions/vector-direct-symbolic.svg</file>
+        <file alias="vector-ellipse-symbolic.svg">icons/actions/vector-ellipse-symbolic.svg</file>
+        <file alias="vector-envelope-symbolic.svg">icons/actions/vector-envelope-symbolic.svg</file>
+        <file alias="vector-eraser-symbolic.svg">icons/actions/vector-eraser-symbolic.svg</file>
+        <file alias="vector-eyedropper-symbolic.svg">icons/actions/vector-eyedropper-symbolic.svg</file>
+        <file alias="vector-gradient-symbolic.svg">icons/actions/vector-gradient-symbolic.svg</file>
+        <file alias="vector-graph-symbolic.svg">icons/actions/vector-graph-symbolic.svg</file>
+        <file alias="vector-hand-symbolic.svg">icons/actions/vector-hand-symbolic.svg</file>
+        <file alias="vector-knife-symbolic.svg">icons/actions/vector-knife-symbolic.svg</file>
+        <file alias="vector-lasso-symbolic.svg">icons/actions/vector-lasso-symbolic.svg</file>
+        <file alias="vector-line-symbolic.svg">icons/actions/vector-line-symbolic.svg</file>
+        <file alias="vector-live-paint-symbolic.svg">icons/actions/vector-live-paint-symbolic.svg</file>
+        <file alias="vector-mesh-symbolic.svg">icons/actions/vector-mesh-symbolic.svg</file>
+        <file alias="vector-pen-symbolic.svg">icons/actions/vector-pen-symbolic.svg</file>
+        <file alias="vector-pencil-symbolic.svg">icons/actions/vector-pencil-symbolic.svg</file>
+        <file alias="vector-perspective-symbolic.svg">icons/actions/vector-perspective-symbolic.svg</file>
+        <file alias="vector-polygon-symbolic.svg">icons/actions/vector-polygon-symbolic.svg</file>
+        <file alias="vector-rectangle-symbolic.svg">icons/actions/vector-rectangle-symbolic.svg</file>
+        <file alias="vector-reflect-symbolic.svg">icons/actions/vector-reflect-symbolic.svg</file>
+        <file alias="vector-reflect-vertical-symbolic.svg">icons/actions/vector-reflect-vertical-symbolic.svg</file>
+        <file alias="vector-repeat-symbolic.svg">icons/actions/vector-repeat-symbolic.svg</file>
+        <file alias="vector-rotate-symbolic.svg">icons/actions/vector-rotate-symbolic.svg</file>
+        <file alias="vector-rounded-symbolic.svg">icons/actions/vector-rounded-symbolic.svg</file>
+        <file alias="vector-scale-symbolic.svg">icons/actions/vector-scale-symbolic.svg</file>
+        <file alias="vector-scissors-symbolic.svg">icons/actions/vector-scissors-symbolic.svg</file>
+        <file alias="vector-select-symbolic.svg">icons/actions/vector-select-symbolic.svg</file>
+        <file alias="vector-shape-builder-symbolic.svg">icons/actions/vector-shape-builder-symbolic.svg</file>
+        <file alias="vector-star-symbolic.svg">icons/actions/vector-star-symbolic.svg</file>
+        <file alias="vector-symbol-sprayer-symbolic.svg">icons/actions/vector-symbol-sprayer-symbolic.svg</file>
+        <file alias="vector-text-area-symbolic.svg">icons/actions/vector-text-area-symbolic.svg</file>
+        <file alias="vector-text-path-symbolic.svg">icons/actions/vector-text-path-symbolic.svg</file>
+        <file alias="vector-text-symbolic.svg">icons/actions/vector-text-symbolic.svg</file>
+        <file alias="vector-width-symbolic.svg">icons/actions/vector-width-symbolic.svg</file>
+        <file alias="vector-zoom-symbolic.svg">icons/actions/vector-zoom-symbolic.svg</file>
+    </gresource>
+</gresources>

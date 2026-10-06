@@ -1,0 +1,8 @@
+[Plugin]
+Module=star-burst
+Name=Star Burst
+Description=Adds a burst of colored rays in the middle of the first artboard
+Authors=Singularity Team
+Copyright=Copyright © 2026 Singularity Team
+Website=https://sinty.dev
+X-Singularity-App=dev.sinty.vector

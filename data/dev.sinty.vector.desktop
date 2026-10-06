@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Vector
+Comment=Create illustrations, icons, and scalable graphics
+Exec=singularity-vector %U
+Icon=dev.sinty.vector
+Terminal=false
+Type=Application
+Categories=Graphics;VectorGraphics;
+MimeType=image/svg+xml;image/svg+xml-compressed;application/illustrator;image/x-eps;application/postscript;image/vnd.dxf;
+Keywords=svg;illustration;icon;vector;path;
