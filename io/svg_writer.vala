@@ -518,7 +518,9 @@ namespace Singularity.Apps.Vector {
                 string pid = next_id ("tp");
                 var path = tn.path_flip ? PathOps.reversed (tn.on_path) : tn.on_path;
                 defs.append ("<path id=\"%s\" d=\"%s\"/>%s".printf (pid, path.to_svg (opts.decimals), nl ()));
-                string anchor = tn.para.align == "center" ? " text-anchor=\"middle\" startOffset=\"50%\"" : (tn.para.align == "right" ? " text-anchor=\"end\" startOffset=\"100%\"" : " startOffset=\"%s\"".printf (n (tn.path_offset)));
+                string anchor = " startOffset=\"%s\"".printf (n (tn.path_offset));
+                if (tn.para.align == "center") anchor = " text-anchor=\"middle\" startOffset=\"50%\"";
+                else if (tn.para.align == "right") anchor = " text-anchor=\"end\" startOffset=\"100%\"";
                 b.append ("%s<text%s%s><textPath href=\"#%s\"%s>%s</textPath></text>%s".printf (indent (depth), style_attrs (props), common (tn), pid, anchor, runs_svg (tn, 0, tn.text.length), nl ()));
                 return b.str;
             }
