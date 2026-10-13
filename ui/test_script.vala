@@ -253,6 +253,36 @@ namespace Singularity.Apps.Vector {
                     }
                     printerr ("script: dump\n%s", builder.str);
                     return 100;
+                case "facts":
+                    var facts = new StringBuilder ();
+                    facts.append_printf ("{\"artboards\":%d,\"symbols\":%d,\"patterns\":%d,\"styles\":%d,\"swatches\":%d,\"layers\":%d,\"selection\":%d,\"mode\":\"%s\",\"proof\":%s,\"overprint\":%s}\n",
+                        c.doc.artboards.size, c.doc.symbols.size, c.doc.patterns.size, c.doc.styles.size, c.doc.swatches.size, c.doc.layers.size, c.selection.size, c.doc.color_mode,
+                        c.doc.proof ? "true" : "false", c.doc.overprint_preview ? "true" : "false");
+                    foreach (var n in c.doc.all_nodes ()) {
+                        var b = n.geometric_bounds ();
+                        var f = n.first_fill ();
+                        var st = n.first_stroke ();
+                        var pn = n as PathNode;
+                        var tn = n as TextNode;
+                        facts.append_printf ("{\"kind\":\"%s\",\"name\":\"%s\",\"x\":%.2f,\"y\":%.2f,\"w\":%.2f,\"h\":%.2f,\"fill\":\"%s\",\"fillkind\":%d,\"stroke\":\"%s\",\"width\":%.2f,\"profile\":%d,\"brush\":\"%s\",\"opacity\":%.2f,\"blend\":%d,\"effects\":%d,\"layers\":%d,\"mask\":%s,\"text\":\"%s\",\"textmode\":\"%s\",\"thread\":\"%s\",\"path\":\"%s\",\"rpath\":\"%s\"}\n",
+                            n.kind_name (), n.name.escape (), b.x, b.y, b.w, b.h,
+                            f != null ? f.paint.color.to_hex () : "", f != null ? (int) f.paint.kind : -1,
+                            st != null ? st.paint.color.to_hex () : "", st != null ? st.width : 0, st != null ? st.profile.size : 0,
+                            st != null ? st.brush.escape () : "", n.opacity, (int) n.blend, n.effects.size, n.appearance.size,
+                            n.mask != null ? "true" : "false", tn != null ? tn.text.escape () : "",
+                            tn != null ? tn.mode : "", tn != null ? tn.thread_next : "",
+                            pn != null ? pn.path.to_svg (1).escape () : "", pn != null ? pn.render_path ().to_svg (1).escape () : "");
+                    }
+                    printerr ("script: facts\n%sscript: end facts\n", facts.str);
+                    return 100;
+                case "appearance-add":
+                    c.doc.begin ("appearance");
+                    foreach (var n in c.selection) {
+                        if (a[1] == "fill") n.appearance.insert (0, new PaintLayer.fill (new Paint.hex (a[2])));
+                        else n.appearance.add (new PaintLayer.line (new Paint.hex (a[2]), a.length > 3 ? double.parse (a[3]) : 1));
+                    }
+                    c.doc.commit ();
+                    return 200;
                 case "view":
                     c.ox = double.parse (a[1]);
                     c.oy = double.parse (a[2]);
