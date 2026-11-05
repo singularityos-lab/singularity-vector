@@ -81,6 +81,7 @@ ui_sources = files(
   'ui/test_script.vala',
   'ui/ribbon.vala',
   'ui/window.vala',
+  'ui/agent_intents.vala',
   'ui/app.vala',
   'tools/base.vala',
   'tools/path_edit.vala',

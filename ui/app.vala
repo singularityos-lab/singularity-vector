@@ -24,6 +24,7 @@ namespace Singularity.Apps.Vector {
             add_action (new_window);
             build_menu ();
             install_accels ();
+            VectorIntents.install (this);
         }
 
         public override void activate () {
