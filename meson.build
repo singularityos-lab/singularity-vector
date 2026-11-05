@@ -133,4 +133,13 @@ executable('vector-iconsgen', core_sources + files('tests/iconsgen.vala'), inclu
 install_data('data/dev.sinty.vector.desktop', install_dir: get_option('datadir') / 'applications')
 install_data('data/dev.sinty.vector.gschema.xml', install_dir: get_option('datadir') / 'glib-2.0' / 'schemas')
 install_data('data/dev.sinty.vector.json', install_dir: get_option('datadir') / 'singularity' / 'app-settings')
+vector_service_conf = configuration_data()
+vector_service_conf.set('bindir', get_option('prefix') / get_option('bindir'))
+configure_file(
+  input: 'data/dev.sinty.vector.service.in',
+  output: 'dev.sinty.vector.service',
+  configuration: vector_service_conf,
+  install: true,
+  install_dir: get_option('datadir') / 'dbus-1' / 'services'
+)
 install_data('data/icons/dev.sinty.vector.svg', install_dir: get_option('datadir') / 'icons' / 'hicolor' / 'scalable' / 'apps')
