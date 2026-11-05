@@ -129,7 +129,7 @@ namespace Singularity.Apps.Vector {
             return row.spin_btn;
         }
 
-        private DropDown choice (string title, string[] labels, int selected) {
+        private ChoiceButton choice (string title, string[] labels, int selected) {
             var holder = new PreferencesGroup ();
             var d = Forms.choice (holder, title, labels, selected);
             var row = holder.get_rows ()[0];

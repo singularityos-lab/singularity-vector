@@ -41,7 +41,7 @@ namespace Singularity.Apps.Vector {
             var doc = win.doc;
             Box body;
             var g = new PreferencesGroup (_("SVG Options"));
-            DropDown scope = null, styling = null;
+            ChoiceButton scope = null, styling = null;
             SpinButton decimals = null;
             Switch minify = null, responsive = null, outlines = null, link = null, native = null;
             var dlg = Forms.form (win, _("Export SVG"), _("Export"), out body, () => {
@@ -88,7 +88,7 @@ namespace Singularity.Apps.Vector {
             var doc = win.doc;
             Box body;
             var g = new PreferencesGroup (_("Export for Screens"));
-            DropDown scope = null;
+            ChoiceButton scope = null;
             Switch png = null, jpg = null, webp = null, svg_f = null, pdf = null, transparent = null, s1 = null, s2 = null, s3 = null, s05 = null;
             Entry prefix = null;
             var dlg = Forms.form (win, _("Export for Screens"), _("Export"), out body, () => {
@@ -138,7 +138,7 @@ namespace Singularity.Apps.Vector {
             var doc = win.doc;
             Box body;
             var g = new PreferencesGroup (_("PDF Options"));
-            DropDown scope = null, standard = null;
+            ChoiceButton scope = null, standard = null;
             SpinButton bleed = null;
             Switch marks = null, doc_bleed = null;
             var dlg = Forms.form (win, _("Export PDF"), _("Export"), out body, () => {
@@ -175,7 +175,7 @@ namespace Singularity.Apps.Vector {
             var doc = win.doc;
             Box body;
             var g = new PreferencesGroup (_("Image Options"));
-            DropDown format = null, scope = null, color = null;
+            ChoiceButton format = null, scope = null, color = null;
             SpinButton dpi = null, quality = null;
             Switch transparent = null, aa = null;
             string[] formats = { "png", "jpeg", "webp", "tiff" };

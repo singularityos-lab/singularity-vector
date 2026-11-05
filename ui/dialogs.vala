@@ -42,7 +42,7 @@ namespace Singularity.Apps.Vector {
             SpinButton a = null, b = null;
             Switch copy = null;
             Switch strokes = null;
-            DropDown reference = null;
+            ChoiceButton reference = null;
             string title = kind == "move" ? _("Move") : (kind == "rotate" ? _("Rotate") : (kind == "scale" ? _("Scale") : (kind == "reflect" ? _("Reflect") : _("Shear"))));
             var dlg = Forms.form (win, title, copy == null ? _("OK") : _("OK"), out body, () => {
                 var box = c.selection_bounds ();
@@ -111,7 +111,7 @@ namespace Singularity.Apps.Vector {
             var g = new PreferencesGroup (_("Options"));
             SpinButton sx = null, sy = null, dx = null, dy = null, an = null, copies = null;
             Switch fh = null, fv = null, rnd = null;
-            DropDown origin = null;
+            ChoiceButton origin = null;
             var dlg = Forms.form (win, _("Transform Each"), _("OK"), out body, () => {
                 int o = (int) origin.selected;
                 int[] map = { 8, 0, 2, 4, 6 };
@@ -135,7 +135,7 @@ namespace Singularity.Apps.Vector {
             Box body;
             var g = new PreferencesGroup (_("Options"));
             SpinButton d = null, miter = null;
-            DropDown join = null;
+            ChoiceButton join = null;
             var dlg = Forms.form (win, _("Offset Path"), _("OK"), out body, () => {
                 Commands.offset_path (win.canvas, d.value, (JoinKind) join.selected, miter.value);
             });
@@ -212,7 +212,7 @@ namespace Singularity.Apps.Vector {
         public static void envelope_warp (VectorWindow win) {
             Box body;
             var g = new PreferencesGroup (_("Warp"));
-            DropDown style = null;
+            ChoiceButton style = null;
             SpinButton bend = null;
             string[] labels = { _("Arc"), _("Arc Lower"), _("Arc Upper"), _("Arch"), _("Bulge"), _("Shell Lower"), _("Shell Upper"), _("Flag"), _("Wave"), _("Fish"), _("Rise"), _("Fisheye"), _("Inflate"), _("Squeeze"), _("Twist") };
             var dlg = Forms.form (win, _("Make with Warp"), _("OK"), out body, () => {
@@ -258,7 +258,7 @@ namespace Singularity.Apps.Vector {
             var g = new PreferencesGroup (_("Options"));
             var edits = new Gee.HashMap<string, SpinButton> ();
             ColorPickerButton? color = null;
-            DropDown? warp_style = null;
+            ChoiceButton? warp_style = null;
             var backup = e.copy ();
             bool applied = false;
             var dlg = Forms.form (win, e.label (), _("OK"), out body, () => {
@@ -474,7 +474,7 @@ namespace Singularity.Apps.Vector {
             var g = new PreferencesGroup (_("Colors"));
             var pickers = new Gee.ArrayList<ColorPickerButton> ();
             SpinButton hue = null, sat = null, light = null;
-            DropDown harmony = null;
+            ChoiceButton harmony = null;
             var dlg = Forms.form (win, _("Recolor Artwork"), _("Apply"), out body, () => {
                 var map = new Gee.HashMap<string, Ink> ();
                 for (int i = 0; i < colors.size; i++) {
@@ -591,7 +591,7 @@ namespace Singularity.Apps.Vector {
             var g = new PreferencesGroup (_("Brush"));
             Entry name = null;
             SpinButton angle = null, round = null, size = null, spacing = null, scatter = null, jitter = null, rot = null;
-            DropDown colorize = null;
+            ChoiceButton colorize = null;
             Switch rotate = null;
             var dlg = Forms.form (win, _("Brush Options"), _("OK"), out body, () => {
                 win.doc.begin (_("Brush Options"));
@@ -631,7 +631,7 @@ namespace Singularity.Apps.Vector {
             Box body;
             var g = new PreferencesGroup (_("Pattern"));
             Entry name = null;
-            DropDown tiling = null;
+            ChoiceButton tiling = null;
             SpinButton w = null, h = null, hs = null, vs = null, off = null;
             string[] tilings = { "grid", "brick-row", "brick-col", "hex-col", "hex-row" };
             int ti = 0;
@@ -747,7 +747,7 @@ namespace Singularity.Apps.Vector {
         public static void graph_create (VectorWindow win) {
             Box body;
             var g = new PreferencesGroup (_("Graph"));
-            DropDown kind = null;
+            ChoiceButton kind = null;
             SpinButton w = null, h = null;
             string[] kinds = { "bar", "stacked", "line", "area", "pie", "scatter" };
             var dlg = Forms.form (win, _("New Graph"), _("Create"), out body, () => {
@@ -791,7 +791,7 @@ namespace Singularity.Apps.Vector {
         public static void image_trace (VectorWindow win, ImageNode im) {
             Box body;
             var g = new PreferencesGroup (_("Trace"));
-            DropDown mode = null;
+            ChoiceButton mode = null;
             SpinButton colors = null, threshold = null, noise = null, accuracy = null, corner = null;
             Switch ignore = null, straight = null;
             var dlg = Forms.form (win, _("Image Trace"), _("Trace"), out body, () => {

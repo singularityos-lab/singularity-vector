@@ -99,8 +99,8 @@ namespace Singularity.Apps.Vector {
             return row.switch_btn;
         }
 
-        public static DropDown choice (PreferencesGroup g, string title, string[] labels, int selected) {
-            var d = new DropDown.from_strings (labels);
+        public static ChoiceButton choice (PreferencesGroup g, string title, string[] labels, int selected) {
+            var d = new ChoiceButton.from_strings (labels);
             d.selected = selected.clamp (0, labels.length - 1);
             var row = new SelectionRow (title, labels, labels[d.selected]);
             string[] items = labels;
@@ -116,7 +116,7 @@ namespace Singularity.Apps.Vector {
             d.notify["selected"].connect (() => {
                 if (d.selected < items.length) row.current_value = items[d.selected];
             });
-            row.set_data<DropDown> ("vector-choice", d);
+            row.set_data<ChoiceButton> ("vector-choice", d);
             g.add_row (row);
             return d;
         }

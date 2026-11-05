@@ -576,7 +576,7 @@ namespace Singularity.Apps.Vector {
             append (g);
         }
 
-        private void edit_blend (BlendNode bl, DropDown spacing, SpinButton steps, SpinButton dist, Switch orient) {
+        private void edit_blend (BlendNode bl, ChoiceButton spacing, SpinButton steps, SpinButton dist, Switch orient) {
             if (building) return;
             doc.begin (_("Blend Options"));
             bl.spacing = spacing.selected == 0 ? "smooth" : (spacing.selected == 1 ? "steps" : "distance");
@@ -654,7 +654,7 @@ namespace Singularity.Apps.Vector {
             append (g);
         }
 
-        private void edit_warp (EnvelopeNode ev, DropDown style, SpinButton bend, SpinButton hd, SpinButton vd, Switch vertical) {
+        private void edit_warp (EnvelopeNode ev, ChoiceButton style, SpinButton bend, SpinButton hd, SpinButton vd, Switch vertical) {
             if (building) return;
             doc.begin (_("Warp Options"));
             ev.style = WarpStyle.ids ()[style.selected];

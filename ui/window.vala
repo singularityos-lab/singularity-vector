@@ -509,6 +509,7 @@ namespace Singularity.Apps.Vector {
             s3.append (_("Hide"), "win.hide");
             menu.append_section (null, s3);
             var pop = new PopoverMenu.from_model (menu);
+            pop.add_css_class ("singularity-app-menu");
             pop.set_parent (canvas);
             pop.has_arrow = false;
             Gdk.Rectangle r = { (int) x, (int) y, 1, 1 };
