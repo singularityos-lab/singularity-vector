@@ -282,7 +282,8 @@ namespace Singularity.Apps.Vector {
                 if (close < 0) break;
                 string name = t.substring (pos, open - pos).strip ().replace (",", "").strip ();
                 double[] v = {};
-                var sc = new PathScanner (t.substring (open + 1, close - open - 1));
+                string args = t.substring (open + 1, close - open - 1);
+                var sc = new PathScanner (args);
                 double x;
                 while (sc.number (out x)) v += x;
                 var step = Cairo.Matrix.identity ();

@@ -116,6 +116,26 @@ namespace VectorIoTests {
         }
     }
 
+    void test_group_transforms () {
+        var m = SvgReader.transform ("matrix(1 0 0 1 40 30)");
+        check (m.x0 == 40 && m.y0 == 30, "matrix translation %g %g".printf (m.x0, m.y0));
+        var t = SvgReader.transform ("translate(12, 7) scale(2)");
+        check (t.x0 == 12 && t.y0 == 7 && t.xx == 2, "translate then scale");
+        string svg = """<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300"><g id="s1"><g transform="matrix(1 0 0 1 40 30)"><path d="M0 0 L100 0 L100 50 Z"/></g></g><g id="s2"><g transform="matrix(1 0 0 1 200 150)"><path d="M0 0 L60 0 L60 40 Z"/></g></g></svg>""";
+        try {
+            var d = SvgReader.parse (svg);
+            var kids = d.layers[0].children;
+            check (kids.size == 2, "two shapes");
+            var a = kids[0].visual_bounds ();
+            var b = kids[1].visual_bounds ();
+            check (Math.fabs (a.x - 40) < 0.01 && Math.fabs (a.y - 30) < 0.01, "first shape at %g %g".printf (a.x, a.y));
+            check (Math.fabs (b.x - 200) < 0.01 && Math.fabs (b.y - 150) < 0.01, "second shape at %g %g".printf (b.x, b.y));
+        } catch (Error e) {
+            printerr ("%s\n", e.message);
+            assert_not_reached ();
+        }
+    }
+
     void test_foreign_svg () {
         string svg = """<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200mm" height="100mm" viewBox="0 0 200 100">
 <style>.a{fill:#ff0000;stroke:blue;stroke-width:2}</style>
@@ -310,6 +330,7 @@ namespace VectorIoTests {
 int main (string[] args) {
     Test.init (ref args);
     Test.add_func ("/vector-io/native-svg", VectorIoTests.test_native_svg);
+    Test.add_func ("/vector-io/group-transforms", VectorIoTests.test_group_transforms);
     Test.add_func ("/vector-io/foreign-svg", VectorIoTests.test_foreign_svg);
     Test.add_func ("/vector-io/pdf", VectorIoTests.test_pdf);
     Test.add_func ("/vector-io/raster", VectorIoTests.test_raster);
