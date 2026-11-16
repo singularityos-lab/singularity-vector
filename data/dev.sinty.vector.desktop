@@ -6,5 +6,6 @@ Icon=dev.sinty.vector
 Terminal=false
 Type=Application
 Categories=Graphics;VectorGraphics;
+X-Sinty-FormFactors=desktop;tablet;phone
 MimeType=image/svg+xml;image/svg+xml-compressed;application/illustrator;image/x-eps;application/postscript;image/vnd.dxf;
 Keywords=svg;illustration;icon;vector;path;
